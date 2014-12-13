@@ -1,3 +1,6 @@
+// Copyright 2014 Teemu Kokkonen
+// Licensed with GNU General Public License 3 or later
+
 var pg = require('pg');
 var handlebars = require('handlebars');
 var nsh = require('node-syntaxhighlighter');
