@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Revelation - PostgreSQL Query tool</title>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+    
+    <link href="../bower_components/bootstrap-material-design/dist/css/ripples.min.css" rel="stylesheet">
+    <link href="../bower_components/bootstrap-material-design/dist/css/material-wfont.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/app.css">
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/bootstrap-material-design/dist/js/ripples.min.js"></script>
+    <script src="../bower_components/bootstrap-material-design/dist/js/material.min.js"></script>
+    <script src="../js/app.js"></script>
+</head>
+<body>
+    <header>Revelation</header>
+    <div class="notes">
+    </div>
+    <script class="js-note-error-template" type="text/template">
+        <div class="alert alert-danger" role="alert">
+            <div class="sql">{{ sql }}</div>
+            <div class="error">{{ error }}</div>
+        </div>
+    </script>
+    <script class="js-note-query-template" type="text/template">
+        <div class="note">
+            <div class="sql">{{ sql }}</div>
+            <div class="results">
+                <table class="table">
+                <tr>
+                  {{#each fields}}
+                    <th>{{name}}</th>
+                  {{/each}}
+                </tr>
+                {{#each rows}}
+                    <tr>
+                        {{#each this}}
+                            <td>{{ this }}</td>
+                        {{/each}}
+                    </tr>
+                {{/each}}
+                </table>
+            </div>
+        </div>
+    </script>
+    <div class="input">
+        <textarea class="js-input">SELECT NOW() AS current_time, MD5('hello world') AS hashed_string;</textarea>
+    </div>
+</body>
+</html>

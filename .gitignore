@@ -1,0 +1,9 @@
+node_modules/
+nw
+nw.pak
+nwsnapshot
+locales
+bower_components/
+credits.html
+icudtl.dat
+libffmpegsumo.so
